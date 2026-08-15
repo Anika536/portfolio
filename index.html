@@ -1,257 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasnima Akter Anika - Terminal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Fira Code', monospace;
-            background-color: #1a1b26;
-            color: #a9b1d6;
-        }
-        .prompt::before {
-            content: '[anika@localhost ~]$ ';
-            color: #7aa2f7;
-        }
-        .command {
-            color: #c0caf5;
-        }
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 1.2rem;
-            background-color: #a9b1d6;
-            animation: blink 1s infinite;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        .output {
-            padding-left: 1rem;
-            border-left: 1px solid #3b4261;
-            margin-left: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        .section-link {
-             color: #7dcfff;
-             text-decoration: underline;
-        }
-        .section-link:hover {
-            background-color: #7dcfff;
-            color: #1a1b26;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasnima Akter Anika | Aspiring Cybersecurity Professional</title>
+  <meta name="description" content="Interactive cybersecurity portfolio of Tasnima Akter Anika, featuring CV-grounded projects, experience, certifications, CTF achievements, and technical focus areas.">
+  <meta name="keywords" content="Tasnima Akter Anika, cybersecurity portfolio, CTF competitor, penetration testing, reverse engineering, SOC operations, secure coding, VAPT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tasnima Akter Anika | Aspiring Cybersecurity Professional">
+  <meta property="og:description" content="Aspiring cybersecurity professional with hands-on experience in pentesting, reverse engineering, SOC operations, and secure development.">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="p-4 md:p-8">
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Header / Login MOTD -->
-        <header class="mb-8">
-            <pre id="header-text" class="text-xs md:text-sm text-green-400 whitespace-pre-wrap"></pre>
-        </header>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Tasnima Akter Anika</a>
+      <button class="menu-btn" id="menuBtn" aria-controls="siteNav" aria-expanded="false">Menu</button>
+      <nav id="siteNav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <main id="main-content">
-            <!-- Animated content will be injected here by JavaScript -->
-        </main>
+  <main id="main-content">
+    <section class="panel hero reveal" id="home" aria-labelledby="heroTitle">
+      <div class="hero-grid">
+        <div>
+          <h1 id="heroTitle">Tasnima Akter Anika</h1>
+          <p class="lead"><strong>Aspiring Cybersecurity Professional</strong> focused on penetration testing, reverse engineering, SOC operations, and secure coding.</p>
+          <p class="lead">Ranked in the top 1% on TryHackMe and actively developing practical skills through CTF participation, security projects, and continuous technical training.</p>
 
-        <!-- Final Prompt -->
-        <div id="final-prompt" class="prompt" style="display: none;">
-            <span class="command"></span>
-            <span class="cursor"></span>
+          <div class="status-row" aria-live="polite">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>SECURITY STATUS: ONLINE</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
+
+          <div class="focus-links" aria-label="Profile links listed in CV">
+            <a href="https://www.linkedin.com/in/tasnima-akter-anika" class="pill" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Anika536" class="pill" target="_blank" rel="noopener noreferrer">Github</a>
+            <a href="https://profile.hackthebox.com/profile/019d919b-d4a6-713c-bedb-93ee3cb4522b" class="pill" target="_blank" rel="noopener noreferrer">HackTheBox</a>
+          </div>
         </div>
-    </div>
 
-    <!-- Hidden container for the content that will be animated -->
-    <div id="content-template" style="display: none;">
-        <!-- About Section -->
-        <section id="about" class="mb-8">
-            <div class="prompt"><span class="command">./about.sh</span></div>
-            <div class="output mt-2">
-                <h2 class="text-2xl font-bold text-blue-400 mb-2">> My Philosophy</h2>
-                <p class="text-gray-300 mb-4">
-                    I believe in a proactive, intelligence-driven approach to security. It's not just about building walls; it's about understanding the threat landscape, thinking like an attacker, and hunting for vulnerabilities before they can be exploited. My passion is rooted in the challenge of solving complex digital puzzles and using those skills to protect critical data and infrastructure.
-                </p>
-                <p class="text-gray-300">
-                    From leading my university's CTF team to contributing to Google's VRP, I am constantly learning and adapting. I thrive in environments where I can apply my analytical skills to real-world security challenges.
-                </p>
+        <aside class="dashboard" aria-label="Candidate dashboard">
+          <h3>Candidate Snapshot</h3>
+          <div class="metric-grid">
+            <div class="metric">
+              <span class="label">Location</span>
+              <strong>Dhaka, Bangladesh</strong>
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="mb-8">
-            <div class="prompt"><span class="command">cat skills.log</span></div>
-            <div class="output mt-2">
-                <h3 class="font-bold text-purple-400">// OFFENSIVE_TOOLCHAIN</h3>
-                <p class="text-gray-300">Pentesting, VAPT, Web & API Security, Reverse Engineering, Binary Exploitation</p>
-                <p class="text-sm text-gray-400">[Tools: Nmap, Burp Suite, Metasploit, Nessus, Ghidra, Wireshark, Hydra, Shodan]</p>
-                
-                <h3 class="font-bold text-purple-400 mt-4">// DEFENSIVE_TOOLCHAIN</h3>
-                <p class="text-gray-300">Threat Hunting, SOC Monitoring, Digital Forensics, Incident Response, Log Analysis</p>
-                <p class="text-sm text-gray-400">[Tools: Suricata, SIEM Platforms, Evebox, Python/Bash Scripting]</p>
-
-                <h3 class="font-bold text-purple-400 mt-4">// SYSTEMS_&_NETWORKING</h3>
-                 <p class="text-gray-300">Linux/Windows Administration, Secure Network Configuration, Shell Scripting</p>
+            <div class="metric">
+              <span class="label">Current Path</span>
+              <strong>Cybersecurity</strong>
             </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects" class="mb-8">
-             <div class="prompt"><span class="command">ls -l ./projects</span></div>
-             <div class="output mt-2 space-y-6">
-                <!-- Project 1 -->
-                <div class="project-item">
-                    <h3 class="text-xl font-bold text-yellow-400">Google_VRP_Submission.md</h3>
-                    <p class="text-sm text-gray-400">[OBJECTIVE]: Identify and report security vulnerabilities in live Google products.</p>
-                    <p class="text-sm text-gray-400">[METHODOLOGY]: Performed manual code review and dynamic analysis on selected product features, focusing on input validation and authentication flaws.</p>
-                    <p class="text-sm text-gray-400">[OUTCOME]: Successfully identified and reported 2 valid vulnerabilities, contributing to improved bug triage and remediation processes at Google.</p>
-                </div>
-                 <!-- Project 2 -->
-                <div class="project-item">
-                    <h3 class="text-xl font-bold text-yellow-400">NSTU_Website_Pentest.log</h3>
-                    <p class="text-sm text-gray-400">[OBJECTIVE]: Conduct a comprehensive security audit of the university's main website.</p>
-                    <p class="text-sm text-gray-400">[METHODOLOGY]: Utilized a combination of automated scanning (Nmap, Nessus) and manual testing (Burp Suite, Wireshark) to map the attack surface and test for common web vulnerabilities.</p>
-                    <p class="text-sm text-gray-400">[OUTCOME]: Discovered several critical vulnerabilities, including potential XSS and insecure configuration. Provided a detailed report that led to a 40% improvement in site security.</p>
-                </div>
-                 <!-- Project 3 -->
-                <div class="project-item">
-                    <h3 class="text-xl font-bold text-yellow-400">BlackHat_CTF_Debrief.txt</h3>
-                    <p class="text-sm text-gray-400">[OBJECTIVE]: Compete as Team Captain for NSTU_Bootloaders and achieve a high international ranking.</p>
-                    <p class="text-sm text-gray-400">[METHODOLOGY]: Specialized in reverse engineering and forensics challenges. Utilized Assembly and Suricata skills to solve complex problems under pressure.</p>
-                    <p class="text-sm text-gray-400">[OUTCOME]: Led the team to a Top 40 international finish. Personally recognized among the Top 100 highest-scoring players.</p>
-                </div>
-             </div>
-        </section>
-
-         <!-- Contact Section -->
-        <section id="contact" class="mb-8">
-            <div class="prompt"><span class="command">./contact.sh</span></div>
-            <div class="output mt-2">
-                <p class="text-gray-300">Open to new opportunities and collaborations. Let's connect.</p>
-                <div class="mt-2 space-y-1">
-                    <p><span class="text-green-400">EMAIL:</span> <a href="mailto:t.a.anika536@gmail.com" class="section-link">t.a.anika536@gmail.com</a></p>
-                    <p><span class="text-green-400">LINKEDIN:</span> <a href="#" class="section-link">linkedin.com/in/tasnima-anika</a></p>
-                    <p><span class="text-green-400">GITHUB:</span> <a href="#" class="section-link">github.com/tasnima-anika</a></p>
-                    <p><span class="text-green-400">TRYHACKME:</span> <a href="#" class="section-link">tryhackme.com/p/Anika</a></p>
-                </div>
+            <div class="metric">
+              <span class="label">TryHackMe</span>
+              <strong>Top 1%</strong>
             </div>
-        </section>
-    </div>
+            <div class="metric">
+              <span class="label">CTF Team Role</span>
+              <strong>Team Leader</strong>
+            </div>
+          </div>
+          <p id="localTime" class="live-time">Local Time:</p>
+        </aside>
 
-    <script>
-        // Helper function for delays
-        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+        <div class="hero-viz" aria-hidden="true">
+          <svg viewBox="0 0 300 200" width="100%" height="100%" role="presentation" focusable="false">
+            <line x1="24" y1="160" x2="126" y2="86" stroke="#2ec8a2" stroke-opacity="0.45" stroke-width="1.8"></line>
+            <line x1="126" y1="86" x2="249" y2="40" stroke="#2ec8a2" stroke-opacity="0.45" stroke-width="1.8"></line>
+            <line x1="249" y1="40" x2="278" y2="20" stroke="#6eb4ff" stroke-opacity="0.5" stroke-width="1.4"></line>
+          </svg>
+          <span class="node" style="left: 20px; top: 152px;"></span>
+          <span class="node n2" style="left: 121px; top: 82px;"></span>
+          <span class="node n3" style="left: 245px; top: 37px;"></span>
+          <span class="node n4" style="left: 274px; top: 16px;"></span>
+          <span class="packet"></span>
+          <span class="packet p2"></span>
+        </div>
+      </div>
+    </section>
 
-        // Function to simulate typing a command
-        async function typeCommand(element, command, speed = 75) {
-            for (let i = 0; i < command.length; i++) {
-                element.textContent += command[i];
-                await sleep(speed);
-            }
-        }
+    <section class="panel reveal" id="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About</h2>
+      <div class="about-grid">
+        <article class="info-card">
+          <p class="lead">I am currently pursuing a BSc in Computer Science and Telecommunication Engineering at Noakhali Science and Technology University. My path in cybersecurity is built through practical projects, competitive CTF challenges, and continuous skill development in offensive and defensive security domains.</p>
+          <details>
+            <summary>Current Focus and Direction</summary>
+            <p class="lead">Current focus areas include penetration testing, reverse engineering, SOC monitoring, and secure software development. My goal is to contribute in technical security roles with a hands-on, problem-solving approach.</p>
+          </details>
+        </article>
 
-        // Function to animate the header
-        async function animateHeader() {
-            const headerPre = document.getElementById('header-text');
-            
-            // Generate dynamic login details
-            const now = new Date();
-            const dateString = now.toString().substring(0, 24); // Format: "Fri Sep 05 2025 15:41:00"
-            const ip = `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
+        <article class="info-card">
+          <h3>Learning Indicators</h3>
+          <div class="progress-list">
+            <div class="progress-item">
+              <span>Hands-on CTF Practice</span>
+              <div class="progress-track"><span class="progress-fill" style="--value: 90%;"></span></div>
+            </div>
+            <div class="progress-item">
+              <span>Secure Development Projects</span>
+              <div class="progress-track"><span class="progress-fill" style="--value: 82%;"></span></div>
+            </div>
+            <div class="progress-item">
+              <span>SOC and Threat Analysis Training</span>
+              <div class="progress-track"><span class="progress-fill" style="--value: 78%;"></span></div>
+            </div>
+          </div>
 
-            const headerLines = [
-                `Last login: ${dateString} from ${ip}`,
-                '================================================================================',
-                'Welcome to the personal server of Tasnima Akter Anika.',
-                'System Info: Cybersecurity Analyst | CTF Competitor | Threat Hunter',
-                '',
-                `Type './about.sh' to get started.`,
-                '================================================================================',
-            ];
+          <div class="focus-links" aria-label="Security interests">
+            <span class="pill">Pentesting</span>
+            <span class="pill">Reverse Engineering</span>
+            <span class="pill">Threat Hunting</span>
+            <span class="pill">Secure Coding</span>
+            <span class="pill">Network Security</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-            for (const line of headerLines) {
-                if (line.includes('./about.sh')) {
-                    const part1 = "Type '";
-                    const spanHtml = `<span class="section-link" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">./about.sh</span>`;
-                    const part2 = "' to get started.";
+    <section class="panel reveal" id="skills" aria-labelledby="skillsTitle">
+      <h2 id="skillsTitle">Skills</h2>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>Cybersecurity</h3>
+          <p>Pentesting, VAPT, Reverse Engineering, Binary Exploitation, Web Security, SOC Monitoring, Threat Hunting, Digital Forensics, Threat Intelligence.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Networking</h3>
+          <p>Cisco Packet Tracer, wired network configuration, and defensive network understanding through practical labs and projects.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Programming</h3>
+          <p>C++, Python, Bash, PHP, SQL, JavaScript, and Java for practical project and security workflow development.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Operating Systems</h3>
+          <p>Linux command-line and shell scripting, plus Windows systems familiarity.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Security Tools</h3>
+          <p>Burp Suite, Metasploit, Nmap, Gobuster, Hashcat, Nessus, Ghidra, Wireshark, Suricata, Evebox, Shodan, SIEM platforms.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Secure Development</h3>
+          <p>Applied secure coding practices in academic web projects and code review training (SQLi, XSS, authentication risk awareness).</p>
+        </article>
+      </div>
+    </section>
 
-                    for (const char of part1) {
-                        headerPre.innerHTML += char;
-                        await sleep(25);
-                    }
-                    headerPre.innerHTML += spanHtml;
-                    for (const char of part2) {
-                        headerPre.innerHTML += char;
-                        await sleep(25);
-                    }
-                    headerPre.innerHTML += '\n';
-                } else {
-                    for (const char of line) {
-                        headerPre.innerHTML += char;
-                        await sleep(15);
-                    }
-                    headerPre.innerHTML += '\n';
-                }
-                await sleep(50);
-            }
-            runCliAnimation(); // Start the main animation after the header
-        }
+    <section class="panel reveal" id="projects" aria-labelledby="projectsTitle">
+      <h2 id="projectsTitle">Projects</h2>
+      <div class="filter-row" role="toolbar" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="cybersecurity" type="button">Cybersecurity</button>
+        <button class="filter-btn" data-filter="programming" type="button">Programming</button>
+        <button class="filter-btn" data-filter="networking" type="button">Networking</button>
+        <button class="filter-btn" data-filter="securedev" type="button">Secure Development</button>
+      </div>
 
-        // Main animation function
-        async function runCliAnimation() {
-            const mainContent = document.getElementById('main-content');
-            const finalPrompt = document.getElementById('final-prompt');
-            const templateContainer = document.getElementById('content-template');
-            const sections = Array.from(templateContainer.children);
+      <div class="projects-grid" id="projectGrid">
+        <article class="project-card" data-category="cybersecurity programming" tabindex="0">
+          <h3>Port Scanner</h3>
+          <p class="meta">Python-based capstone project from TCM Security coursework.</p>
+          <p class="meta">Security relevance: practical reconnaissance and attack-surface mapping.</p>
+          <div class="tech-tags"><span>Python</span><span>Recon</span><span>Networking</span></div>
+          <div class="project-actions">
+            <button class="link-btn" type="button" data-project-open="portscanner">View Details</button>
+          </div>
+        </article>
 
-            for (const section of sections) {
-                const commandText = section.querySelector('.command').textContent;
-                const outputDiv = section.querySelector('.output');
-                
-                const promptDiv = document.createElement('div');
-                promptDiv.className = 'prompt';
-                const commandSpan = document.createElement('span');
-                commandSpan.className = 'command';
-                const cursorSpan = document.createElement('span');
-                cursorSpan.className = 'cursor';
-                promptDiv.appendChild(commandSpan);
-                promptDiv.appendChild(cursorSpan);
-                mainContent.appendChild(promptDiv);
+        <article class="project-card" data-category="networking" tabindex="0">
+          <h3>SOHO Network Configuration</h3>
+          <p class="meta">Designed and configured a wired IT company network for an Akamai course project.</p>
+          <p class="meta">Security relevance: network design and infrastructure hardening foundations.</p>
+          <div class="tech-tags"><span>Networking</span><span>Infrastructure</span></div>
+          <div class="project-actions">
+            <button class="link-btn" type="button" data-project-open="soho">View Details</button>
+            <a class="link-btn" href="https://url-shortener.me/6KQO" target="_blank" rel="noopener noreferrer">Project Link</a>
+          </div>
+        </article>
 
-                promptDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                await typeCommand(commandSpan, commandText);
+        <article class="project-card" data-category="programming securedev" tabindex="0">
+          <h3>NSTU EduEval System</h3>
+          <p class="meta">Student feedback system using HTML, CSS, PHP, MySQL, and JavaScript (Nov 2024 - Aug 2025).</p>
+          <p class="meta">Security relevance: secure coding practices in web application development.</p>
+          <div class="tech-tags"><span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+          <div class="project-actions">
+            <button class="link-btn" type="button" data-project-open="edueval">View Details</button>
+            <a class="link-btn" href="https://url-shortener.me/6KQM" target="_blank" rel="noopener noreferrer">Project Link</a>
+          </div>
+        </article>
 
-                cursorSpan.remove();
-                await sleep(500);
+        <article class="project-card" data-category="programming securedev" tabindex="0">
+          <h3>ProjectFlow</h3>
+          <p class="meta">Project management system with secure messaging (Jul 2025 - Present).</p>
+          <p class="meta">Security relevance: secure messaging and secure coding practices.</p>
+          <div class="tech-tags"><span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+          <div class="project-actions">
+            <button class="link-btn" type="button" data-project-open="projectflow">View Details</button>
+            <a class="link-btn" href="https://url-shortener.me/6KQG" target="_blank" rel="noopener noreferrer">Project Link</a>
+          </div>
+        </article>
 
-                outputDiv.style.display = 'block';
-                promptDiv.insertAdjacentElement('afterend', outputDiv);
-                
-                outputDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                await sleep(1000);
-            }
+        <article class="project-card" data-category="programming" tabindex="0">
+          <h3>Text to Speech and Speech to Text Java Application</h3>
+          <p class="meta">Java application built at NSTU (Mar 2023 - Dec 2023).</p>
+          <p class="meta">Technical relevance: practical application development and implementation.</p>
+          <div class="tech-tags"><span>Java</span><span>Application Dev</span></div>
+          <div class="project-actions">
+            <button class="link-btn" type="button" data-project-open="tts">View Details</button>
+            <a class="link-btn" href="https://url-shortener.me/6KQ1" target="_blank" rel="noopener noreferrer">Project Link</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-            finalPrompt.style.display = 'block';
-            finalPrompt.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }
+    <section class="panel reveal" id="experience" aria-labelledby="experienceTitle">
+      <h2 id="experienceTitle">Experience and Education Timeline</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <button type="button" aria-expanded="false">
+            <h3>Security Researcher - Google VRP</h3>
+            <p class="timeline-meta">2025 - Present</p>
+          </button>
+          <div class="timeline-details">
+            <ul>
+              <li>Reported 2 vulnerabilities in Google product (Gemini AI).</li>
+              <li>Contributed to improved bug triage and incident response efficiency.</li>
+            </ul>
+          </div>
+        </article>
 
-        window.onload = () => {
-             const templateContainer = document.getElementById('content-template');
-             const sections = Array.from(templateContainer.querySelectorAll('section'));
-             sections.forEach(section => {
-                 const output = section.querySelector('.output');
-                 if(output) output.style.display = 'none';
-                 templateContainer.appendChild(section);
-             });
-            animateHeader(); // Start with the header animation
-        };
-    </script>
+        <article class="timeline-item">
+          <button type="button" aria-expanded="false">
+            <h3>Cybersecurity Job Simulation - Telstra</h3>
+            <p class="timeline-meta">2025</p>
+          </button>
+          <div class="timeline-details">
+            <ul>
+              <li>Conducted log analysis and malware incident response.</li>
+              <li>Applied reverse engineering on exploit scripts.</li>
+              <li>Enhanced network defenses with firewall rule implementations.</li>
+              <li>Link: https://url-shortener.me/6KWV</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <button type="button" aria-expanded="false">
+            <h3>Team Leader - NSTU_Bootloaders (University CTF Team)</h3>
+            <p class="timeline-meta">2024 - Present</p>
+          </button>
+          <div class="timeline-details">
+            <ul>
+              <li>TechnoNext Web CTF 2025: 31st place (onsite).</li>
+              <li>BlackHatUSA 2025 (Bugcrowd): top 40 team placement and top 100 scorer recognition.</li>
+              <li>UAP Cyber Siege 2025: 19th among 160+ teams.</li>
+              <li>BCSCTF 2025: 19th among 190+ teams.</li>
+              <li>Phoenix Summit CTF 2025: 33rd among 270+ teams.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <button type="button" aria-expanded="false">
+            <h3>Vice President (Technical) - CSTE Club, NSTU</h3>
+            <p class="timeline-meta">Oct 2024 - Present</p>
+          </button>
+          <div class="timeline-details">
+            <ul>
+              <li>Raised cybersecurity awareness among students, teachers, and staff.</li>
+              <li>Guided cybersecurity enthusiasts for CTF and competition readiness.</li>
+              <li>Strengthened collaboration through technical leadership.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <button type="button" aria-expanded="false">
+            <h3>BSc in Computer Science and Telecommunication Engineering - NSTU</h3>
+            <p class="timeline-meta">Mar 2022 - Present</p>
+          </button>
+          <div class="timeline-details">
+            <ul>
+              <li>Coursework: Programming (C, C++, Java), Networking, DBMS, Data Structures, AI/ML, Secure Development.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="certifications" aria-labelledby="certificationsTitle">
+      <h2 id="certificationsTitle">Certifications and Training</h2>
+      <div class="cert-grid">
+        <article class="cert-card"><h3>C3SA (Certified Cyber Security Analyst)</h3><p>Issuer: Cyber Warfare Labs</p></article>
+        <article class="cert-card"><h3>Certified Security Code Review Beginners (CSCRB)</h3><p>Coverage includes SQL injection, XSS, and insecure authentication detection through code analysis.</p></article>
+        <article class="cert-card"><h3>Blue Team Junior Analyst (BTJA)</h3><p>Issuer: Security Blue Team. Areas: threat hunting, digital forensics, OSINT, vulnerability management.</p></article>
+        <article class="cert-card"><h3>Penetration Testing, Threat Hunting and Cryptography</h3><p>Issuer: IBM | Score: 89.5%</p></article>
+        <article class="cert-card"><h3>Cyber Threat Intelligence for SOC Analysts</h3><p>Issuer: SOCRadar. Coverage: intelligence lifecycle, incident response, OSINT.</p></article>
+        <article class="cert-card"><h3>Networking Fundamentals</h3><p>Issuer: Akamai Technologies | Score: 92.5%</p></article>
+        <article class="cert-card"><h3>Linux Commands and Shell Scripting</h3><p>Issuer: IBM | Score: 91.3%</p></article>
+        <article class="cert-card"><h3>API Security Fundamentals 2025</h3><p>Issuer: APIsec University</p></article>
+        <article class="cert-card"><h3>Cyber Threat Hunting with Honeypots</h3><p>Phoenix Summit workshop with trainers from APNIC and BGD e-Gov CIRT.</p></article>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="achievements" aria-labelledby="achievementsTitle">
+      <h2 id="achievementsTitle">Achievements</h2>
+      <div class="achievement-grid">
+        <article class="achievement-card"><h3>Women in Cybersecurity Award 2025</h3><p>Highest-scoring female participant, Phoenix Summit CTF 2025.</p></article>
+        <article class="achievement-card"><h3>TryHackMe</h3><p>Ranked in the top 1%.</p></article>
+        <article class="achievement-card"><h3>BlackHatUSA 2025 CTF (Bugcrowd)</h3><p>Recognized among top 100 scorers; contributed to top 40 international team placement.</p></article>
+        <article class="achievement-card"><h3>Student Fellowship - TheTeamPhoenix</h3><p>Completed intensive workshop on honeypots, SIEM, Suricata, Wireshark, and log analysis; 3rd place in PCAP analysis CTF.</p></article>
+        <article class="achievement-card"><h3>HackTheBox Cyber Apocalypse 2025</h3><p>Top 20% as a solo competitor in reverse engineering, web, and binary exploitation.</p></article>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="contact" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact</h2>
+      <p class="lead">Open to cybersecurity opportunities, technical collaboration, and CTF-related work.</p>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:t.a.anika536@gmail.com">t.a.anika536@gmail.com</a></p>
+        </article>
+        <article class="contact-card">
+          <h3>Location</h3>
+          <p>Dhaka, Bangladesh</p>
+        </article>
+        <article class="contact-card">
+          <h3>Profiles Listed in CV</h3>
+          <p><a href="https://www.linkedin.com/in/tasnima-akter-anika" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/Anika536" target="_blank" rel="noopener noreferrer">Github</a> | <a href="https://profile.hackthebox.com/profile/019d919b-d4a6-713c-bedb-93ee3cb4522b" target="_blank" rel="noopener noreferrer">HackTheBox</a></p>
+        </article>
+      </div>
+
+      <div class="info-card" style="margin-top:0.9rem;">
+        <h3>Security Diagnostic</h3>
+        <p class="lead">Simulated mini challenge for technical visitors. This does not affect normal browsing.</p>
+        <button class="btn btn-secondary" id="runDiagnostic" type="button" data-signal="FLAG{inspect_the_diagnostics_panel}">Run Diagnostic</button>
+        <div class="cta-row" style="margin-top:0.7rem;">
+          <input id="flagInput" type="text" aria-label="Flag input" placeholder="Enter FLAG{...}">
+          <button class="btn btn-primary" id="submitFlag" type="button">Submit Flag</button>
+        </div>
+        <p id="flagResult" aria-live="polite" style="margin-top:0.6rem; color:#f0c17a;">Awaiting diagnostic input.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Tasnima Akter Anika</strong><br>
+        Aspiring Cybersecurity Professional
+      </div>
+      <div><a href="https://www.linkedin.com/in/tasnima-akter-anika" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/Anika536" target="_blank" rel="noopener noreferrer">Github</a> | <a href="https://profile.hackthebox.com/profile/019d919b-d4a6-713c-bedb-93ee3cb4522b" target="_blank" rel="noopener noreferrer">HackTheBox</a></div>
+      <div>© 2026 Tasnima Akter Anika</div>
+    </footer>
+  </main>
+
+  <button class="terminal-toggle" id="terminalToggle" type="button" aria-controls="terminalPanel" aria-expanded="false">Open Terminal</button>
+
+  <section class="terminal-panel" id="terminalPanel" aria-label="Simulated terminal panel">
+    <header class="terminal-head">
+      <h3>security-shell</h3>
+      <button class="terminal-close" id="terminalClose" type="button" aria-label="Close terminal">Close</button>
+    </header>
+    <div class="terminal-body" id="terminalOutput" aria-live="polite"></div>
+    <form class="terminal-form" id="terminalForm">
+      <label for="terminalInput" class="prompt">$</label>
+      <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+    </form>
+  </section>
+
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <article class="modal">
+      <div class="modal-head">
+        <h3 id="modalTitle">Project Details</h3>
+        <button class="close-btn" id="closeModal" type="button" aria-label="Close project details">Close</button>
+      </div>
+      <div id="modalBody"></div>
+    </article>
+  </div>
+
+  <script src="./js/ctf.js"></script>
+  <script src="./js/terminal.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
-
-
