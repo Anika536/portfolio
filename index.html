@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasnima Akter Anika - Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #1a1b26;
+            color: #a9b1d6;
+        }
+        .prompt::before {
+            content: '[anika@localhost ~]$ ';
+            color: #7aa2f7;
+        }
+        .command {
+            color: #c0caf5;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2rem;
+            background-color: #a9b1d6;
+            animation: blink 1s infinite;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .output {
+            padding-left: 1rem;
+            border-left: 1px solid #3b4261;
+            margin-left: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .section-link {
+             color: #7dcfff;
+             text-decoration: underline;
+        }
+        .section-link:hover {
+            background-color: #7dcfff;
+            color: #1a1b26;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header / Login MOTD -->
+        <header class="mb-8">
+            <pre id="header-text" class="text-xs md:text-sm text-green-400 whitespace-pre-wrap"></pre>
+        </header>
+
+        <main id="main-content">
+            <!-- Animated content will be injected here by JavaScript -->
+        </main>
+
+        <!-- Final Prompt -->
+        <div id="final-prompt" class="prompt" style="display: none;">
+            <span class="command"></span>
+            <span class="cursor"></span>
+        </div>
+    </div>
+
+    <!-- Hidden container for the content that will be animated -->
+    <div id="content-template" style="display: none;">
+        <!-- About Section -->
+        <section id="about" class="mb-8">
+            <div class="prompt"><span class="command">./about.sh</span></div>
+            <div class="output mt-2">
+                <h2 class="text-2xl font-bold text-blue-400 mb-2">> My Philosophy</h2>
+                <p class="text-gray-300 mb-4">
+                    I believe in a proactive, intelligence-driven approach to security. It's not just about building walls; it's about understanding the threat landscape, thinking like an attacker, and hunting for vulnerabilities before they can be exploited. My passion is rooted in the challenge of solving complex digital puzzles and using those skills to protect critical data and infrastructure.
+                </p>
+                <p class="text-gray-300">
+                    From leading my university's CTF team to contributing to Google's VRP, I am constantly learning and adapting. I thrive in environments where I can apply my analytical skills to real-world security challenges.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-8">
+            <div class="prompt"><span class="command">cat skills.log</span></div>
+            <div class="output mt-2">
+                <h3 class="font-bold text-purple-400">// OFFENSIVE_TOOLCHAIN</h3>
+                <p class="text-gray-300">Pentesting, VAPT, Web & API Security, Reverse Engineering, Binary Exploitation</p>
+                <p class="text-sm text-gray-400">[Tools: Nmap, Burp Suite, Metasploit, Nessus, Ghidra, Wireshark, Hydra, Shodan]</p>
+                
+                <h3 class="font-bold text-purple-400 mt-4">// DEFENSIVE_TOOLCHAIN</h3>
+                <p class="text-gray-300">Threat Hunting, SOC Monitoring, Digital Forensics, Incident Response, Log Analysis</p>
+                <p class="text-sm text-gray-400">[Tools: Suricata, SIEM Platforms, Evebox, Python/Bash Scripting]</p>
+
+                <h3 class="font-bold text-purple-400 mt-4">// SYSTEMS_&_NETWORKING</h3>
+                 <p class="text-gray-300">Linux/Windows Administration, Secure Network Configuration, Shell Scripting</p>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="mb-8">
+             <div class="prompt"><span class="command">ls -l ./projects</span></div>
+             <div class="output mt-2 space-y-6">
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <h3 class="text-xl font-bold text-yellow-400">Google_VRP_Submission.md</h3>
+                    <p class="text-sm text-gray-400">[OBJECTIVE]: Identify and report security vulnerabilities in live Google products.</p>
+                    <p class="text-sm text-gray-400">[METHODOLOGY]: Performed manual code review and dynamic analysis on selected product features, focusing on input validation and authentication flaws.</p>
+                    <p class="text-sm text-gray-400">[OUTCOME]: Successfully identified and reported 2 valid vulnerabilities, contributing to improved bug triage and remediation processes at Google.</p>
+                </div>
+                 <!-- Project 2 -->
+                <div class="project-item">
+                    <h3 class="text-xl font-bold text-yellow-400">NSTU_Website_Pentest.log</h3>
+                    <p class="text-sm text-gray-400">[OBJECTIVE]: Conduct a comprehensive security audit of the university's main website.</p>
+                    <p class="text-sm text-gray-400">[METHODOLOGY]: Utilized a combination of automated scanning (Nmap, Nessus) and manual testing (Burp Suite, Wireshark) to map the attack surface and test for common web vulnerabilities.</p>
+                    <p class="text-sm text-gray-400">[OUTCOME]: Discovered several critical vulnerabilities, including potential XSS and insecure configuration. Provided a detailed report that led to a 40% improvement in site security.</p>
+                </div>
+                 <!-- Project 3 -->
+                <div class="project-item">
+                    <h3 class="text-xl font-bold text-yellow-400">BlackHat_CTF_Debrief.txt</h3>
+                    <p class="text-sm text-gray-400">[OBJECTIVE]: Compete as Team Captain for NSTU_Bootloaders and achieve a high international ranking.</p>
+                    <p class="text-sm text-gray-400">[METHODOLOGY]: Specialized in reverse engineering and forensics challenges. Utilized Assembly and Suricata skills to solve complex problems under pressure.</p>
+                    <p class="text-sm text-gray-400">[OUTCOME]: Led the team to a Top 40 international finish. Personally recognized among the Top 100 highest-scoring players.</p>
+                </div>
+             </div>
+        </section>
+
+         <!-- Contact Section -->
+        <section id="contact" class="mb-8">
+            <div class="prompt"><span class="command">./contact.sh</span></div>
+            <div class="output mt-2">
+                <p class="text-gray-300">Open to new opportunities and collaborations. Let's connect.</p>
+                <div class="mt-2 space-y-1">
+                    <p><span class="text-green-400">EMAIL:</span> <a href="mailto:t.a.anika536@gmail.com" class="section-link">t.a.anika536@gmail.com</a></p>
+                    <p><span class="text-green-400">LINKEDIN:</span> <a href="#" class="section-link">linkedin.com/in/tasnima-anika</a></p>
+                    <p><span class="text-green-400">GITHUB:</span> <a href="#" class="section-link">github.com/tasnima-anika</a></p>
+                    <p><span class="text-green-400">TRYHACKME:</span> <a href="#" class="section-link">tryhackme.com/p/Anika</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Helper function for delays
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // Function to simulate typing a command
+        async function typeCommand(element, command, speed = 75) {
+            for (let i = 0; i < command.length; i++) {
+                element.textContent += command[i];
+                await sleep(speed);
+            }
+        }
+
+        // Function to animate the header
+        async function animateHeader() {
+            const headerPre = document.getElementById('header-text');
+            
+            // Generate dynamic login details
+            const now = new Date();
+            const dateString = now.toString().substring(0, 24); // Format: "Fri Sep 05 2025 15:41:00"
+            const ip = `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
+
+            const headerLines = [
+                `Last login: ${dateString} from ${ip}`,
+                '================================================================================',
+                'Welcome to the personal server of Tasnima Akter Anika.',
+                'System Info: Cybersecurity Analyst | CTF Competitor | Threat Hunter',
+                '',
+                `Type './about.sh' to get started.`,
+                '================================================================================',
+            ];
+
+            for (const line of headerLines) {
+                if (line.includes('./about.sh')) {
+                    const part1 = "Type '";
+                    const spanHtml = `<span class="section-link" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">./about.sh</span>`;
+                    const part2 = "' to get started.";
+
+                    for (const char of part1) {
+                        headerPre.innerHTML += char;
+                        await sleep(25);
+                    }
+                    headerPre.innerHTML += spanHtml;
+                    for (const char of part2) {
+                        headerPre.innerHTML += char;
+                        await sleep(25);
+                    }
+                    headerPre.innerHTML += '\n';
+                } else {
+                    for (const char of line) {
+                        headerPre.innerHTML += char;
+                        await sleep(15);
+                    }
+                    headerPre.innerHTML += '\n';
+                }
+                await sleep(50);
+            }
+            runCliAnimation(); // Start the main animation after the header
+        }
+
+        // Main animation function
+        async function runCliAnimation() {
+            const mainContent = document.getElementById('main-content');
+            const finalPrompt = document.getElementById('final-prompt');
+            const templateContainer = document.getElementById('content-template');
+            const sections = Array.from(templateContainer.children);
+
+            for (const section of sections) {
+                const commandText = section.querySelector('.command').textContent;
+                const outputDiv = section.querySelector('.output');
+                
+                const promptDiv = document.createElement('div');
+                promptDiv.className = 'prompt';
+                const commandSpan = document.createElement('span');
+                commandSpan.className = 'command';
+                const cursorSpan = document.createElement('span');
+                cursorSpan.className = 'cursor';
+                promptDiv.appendChild(commandSpan);
+                promptDiv.appendChild(cursorSpan);
+                mainContent.appendChild(promptDiv);
+
+                promptDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                await typeCommand(commandSpan, commandText);
+
+                cursorSpan.remove();
+                await sleep(500);
+
+                outputDiv.style.display = 'block';
+                promptDiv.insertAdjacentElement('afterend', outputDiv);
+                
+                outputDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                await sleep(1000);
+            }
+
+            finalPrompt.style.display = 'block';
+            finalPrompt.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+
+        window.onload = () => {
+             const templateContainer = document.getElementById('content-template');
+             const sections = Array.from(templateContainer.querySelectorAll('section'));
+             sections.forEach(section => {
+                 const output = section.querySelector('.output');
+                 if(output) output.style.display = 'none';
+                 templateContainer.appendChild(section);
+             });
+            animateHeader(); // Start with the header animation
+        };
+    </script>
+</body>
+</html>
+
+
